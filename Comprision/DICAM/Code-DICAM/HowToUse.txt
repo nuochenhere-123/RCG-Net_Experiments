@@ -1,0 +1,9 @@
+训练：
+1. 将训练集（含参考图像）放至./Data/ReTrain/中
+2. 修改./UIEB/config/options.py内的参数，如需修改图片预处理方式可修改同目录下的dataset.py，
+3. 运行./UIEB/train_uieb.py即可训练
+
+测试：
+1. 将测试图像放至./Data/ReTrain_Teat中
+2. 修改./UIEB/config/options.py内的testing_dir_inp参数（需要测试的文件夹名）
+3. 运行./UIEB/test_uieb.py即可测试
