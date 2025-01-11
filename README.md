@@ -1,0 +1,5 @@
++ Our code is in the folder of "RCG-Net". We will upload this once our paper is received. There're training set now.  
++ 5 testing sets of our paper are shown in the folder of "TestingSet"
++ The output of our RCG-Net is shown in the folder of "RCG-Net-output"  
++ The code and result of 11 SOTA UIE methods are shown in the folder of "Comprision", some of the checkpoints of them are too large for us to upload, but you can get them from the link in their paper.
+
