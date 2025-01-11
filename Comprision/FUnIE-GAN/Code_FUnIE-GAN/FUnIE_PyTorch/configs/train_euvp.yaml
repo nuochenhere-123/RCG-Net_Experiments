@@ -1,0 +1,18 @@
+
+# dataset info
+dataset_name: "UIEB780" 
+dataset_path: "./data/"
+
+
+# image info
+chans: 3
+im_width: 256
+im_height: 256
+
+# other params
+val_interval: 1000 # steps
+ckpt_interval: 20  # epochs
+
+
+
+ 
