@@ -2,10 +2,11 @@ from model_test import T_CNN
 from utils import *
 import numpy as np
 import tensorflow.compat.v1 as tf
-
+import time
 import pprint
 import os
 import PIL
+
 flags = tf.app.flags
 flags.DEFINE_integer("epoch", 120, "Number of epoch [120]")
 flags.DEFINE_integer("batch_size", 1, "The size of batch images [128]")
@@ -24,6 +25,24 @@ flags.DEFINE_boolean("is_train", False, "True for training, False for testing [T
 FLAGS = flags.FLAGS
 
 pp = pprint.PrettyPrinter()
+def count_parameters():
+    total_parameters = 0
+    for variable in tf.trainable_variables():
+        shape = variable.get_shape().as_list()  # 使用 as_list() 确保返回的是普通 Python 列表
+        variable_parameters = 1
+        for dim in shape:
+            variable_parameters *= dim  # 不再使用 dim.value
+        total_parameters += variable_parameters
+    print("Total parameters: {:.2f}M".format(total_parameters / 1e6))
+
+def estimate_gflops(sess, output_tensor, input_tensor, input_shape):
+    from tensorflow.python.profiler import model_analyzer
+    from tensorflow.python.profiler import option_builder
+
+    run_meta = tf.RunMetadata()
+    opts = option_builder.ProfileOptionBuilder.float_operation()
+    flops = model_analyzer.profile(sess.graph, run_meta=run_meta, cmd='op', options=opts)
+    print("Total GFLOPs: {:.2f}".format(flops.total_float_ops / 1e9))  # 转为 GFLOPs
 
 def main(_):
   #  # 设置环境变量
@@ -49,8 +68,8 @@ def main(_):
     os.makedirs(FLAGS.sample_dir)
   
   # 基础文件夹路径
-  test_base_dir = os.path.join(os.getcwd(), 'Test256')
-  gdcp_base_dir = os.path.join(os.getcwd(), 'GDCP256')
+  test_base_dir = os.path.join(os.getcwd(), 'noise-110-256')
+  gdcp_base_dir = os.path.join(os.getcwd(), 'GDCP-110-256')
 
   # 获取子文件夹名称
   test_subfolders = sorted([f for f in os.listdir(test_base_dir) if os.path.isdir(os.path.join(test_base_dir, f))])
@@ -65,7 +84,8 @@ def main(_):
     data_dir = os.path.join(test_base_dir, test_subfolders[i]) ###### input image dataset
     data_dir1 = os.path.join(gdcp_base_dir, gdcp_subfolders[i]) ###### input transmission dataset
     i += 1
-  
+    print(data_dir, data_dir1)
+
     data = sorted(glob.glob(os.path.join(data_dir, "*.png")))
     test_data_list = data + sorted(glob.glob(os.path.join(data_dir, "*.jpg")))+sorted(glob.glob(os.path.join(data_dir, "*.bmp")))+sorted(glob.glob(os.path.join(data_dir, "*.jpeg")))
     test_data_list = sorted(test_data_list, key=lambda x: os.path.abspath(x)) # 绝对路径排序
@@ -78,8 +98,10 @@ def main(_):
     # GDCP_names = [os.path.basename(image1_path) for image1_path in test_data_list1]
     # print("GDCP_data_list1", ", ".join(GDCP_names), "\n")
     
-
+    total_time = 0.0
+    num = 0
     for ide in range(0,len(test_data_list)):
+      num += 1
       image_test1 =  get_image(test_data_list[ide],is_grayscale=False)
       shape = image_test1.shape
       RGB=Image.fromarray(np.uint8(image_test1*255))
@@ -110,10 +132,21 @@ def main(_):
                     test_depth_name = test_data_list1[ide],
                     id = ide
                     )
-
+          count_parameters()
+          start_time = time.time()
           srcnn.train(FLAGS)
+          end_time = time.time()
+          total_time += end_time - start_time
+          print("Inference time: {:.4f} seconds".format(end_time - start_time))
+          # 🔽 添加：统计 GFLOPs（注意：模型必须已构建）
+          input_tensor = tf.placeholder(tf.float32, shape=[1, shape[0], shape[1], 3])
+          output_tensor = srcnn.pred_h  # 请确认这个是模型输出
+          estimate_gflops(sess, output_tensor, input_tensor, [1, shape[0], shape[1], 3])
+
           sess.close()
       tf.get_default_graph().finalize()
+    print("Total time: ", total_time, ", inference time: ", total_time/num)
+
       
       
 if __name__ == '__main__':
