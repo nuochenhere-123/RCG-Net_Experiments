@@ -1,0 +1,5 @@
+Total Params: 26.27 M
+Total FLOPs: 200.4 GFLOPSSaved output to ./results_RCG/all_raw/res-110!
+Total time: 51.24 s
+Inference time per image: 0.4658 s
+最大 GPU 显存占用：7.20 GB
