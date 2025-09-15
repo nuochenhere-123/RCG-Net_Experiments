@@ -13,23 +13,23 @@ Due to space constraints and their relatively poor performance, GDCP, Fusion, ZS
 
 ## 1. Evaluation in Common and Challenging Degradation Scenarios
 #### The objective results of 4 methods that didn't present in the paper:
-<img src="./README_Img/1-NoCompared4.tiff" alt="relative poor methods" title="Evaluation in Common and Challenging Degradation Scenarios">
+<img src="./README_Img/1-NoCompared4.png" alt="relative poor methods" title="Evaluation in Common and Challenging Degradation Scenarios">
 
 #### The objective results of 9 better methods that have presented in the paper:
-<img src="./README_Img/1_Common_and_Challenging.tiff" alt="paperUsed" title="Evaluation in Common and Challenging Degradation Scenarios">
+<img src="./README_Img/1_Common_and_Challenging.png" alt="paperUsed" title="Evaluation in Common and Challenging Degradation Scenarios">
 
 ## 2. Evaluation in Lighting Degradation Scenarios
 #### The objective results of 4 methods that didn't present in the paper:
-<img src="./README_Img/2-NoCompared4.tiff" alt="relative poor methods" title="Evaluation in Lighting Degradation Scenarios">
+<img src="./README_Img/2-NoCompared4.png" alt="relative poor methods" title="Evaluation in Lighting Degradation Scenarios">
 
 #### The objective results of 9 better methods that have presented in the paper:
-<img src="./README_Img/2_Lighting_Degradation.tiff" alt="paperUsed" title="Evaluation in Lighting Degradation Scenarios">
+<img src="./README_Img/2_Lighting_Degradation.png" alt="paperUsed" title="Evaluation in Lighting Degradation Scenarios">
 
 ## 3. Evaluation on Color Restoration Accuracy
 #### The objective results of 4 methods that didn't present in the paper:
-<img src="./README_Img/3-NoCompared4.tiff" alt="relative poor methods" title="Evaluation on Color Restoration Accuracy">
+<img src="./README_Img/3-NoCompared4.png" alt="relative poor methods" title="Evaluation on Color Restoration Accuracy">
 
 #### The objective results of 9 better methods that have presented in the paper:
-<img src="./README_Img/3_Color_Restoration_Accuracy.tiff" alt="paperUsed" title="Evaluation on Color Restoration Accuracy">
+<img src="./README_Img/3_Color_Restoration_Accuracy.png" alt="paperUsed" title="Evaluation on Color Restoration Accuracy">
 
 
