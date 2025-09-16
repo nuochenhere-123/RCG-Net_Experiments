@@ -11,7 +11,7 @@
 # The subjective results of all 13 methods
 We compared RCG-Net with 13 UIE methods to demonstrate the superiority of our approach. These methods include two restoration method based on physical models: **GDCP (2018)** and **Retinex (2014)**; two traditional methods based on non-physical models: **Fusion (2012)** and **ZSRM (2024)**; nine data-driven and hybrid methods: **FUnIE-GAN (2020)** (GAN-based), **PUGAN (2023)** (a physical model guided GAN), **WaterNet (2019)** (CNN-based), **Ucolor (2021)** (CNN + GDCP), **DICAM (2024)** (CNN based), **U-Shape Transformer (2023)** (Transformer-based), **CTM (2024)** (Transformer + CNN), **UWMamba (2024)** (Mamba + CNN), and **GuidedHybSensUIR (2025)** (Color Balance Prior + CNN + Transformer) (which we denote as HybSens). 
 
-Due to space constraints and their relatively poor performance, GDCP, Fusion, ZSRM, and FUnIE were excluded from the quantitative and qualitative comparisons in our paper. But we have shown the results of all 13 methods below.(You can also seen the complete results in the folder of "Comparison"~)
+<u>Due to space constraints and their relatively poor performance, **GDCP**, **Fusion**, **ZSRM**, and **FUnIE** were excluded from the quantitative and qualitative comparisons in our paper.</u> **But we have shown the results of all 13 methods below.** (You can also seen the complete results in the folder of "Comparison"~)
 
 ## 1. Evaluation in Common and Challenging Degradation Scenarios (Test-110 & Test-C60 & Test-U45)
 #### The subjective results of 4 methods that didn't present in the paper:
