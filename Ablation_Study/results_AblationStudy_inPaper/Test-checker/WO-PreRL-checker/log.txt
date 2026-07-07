@@ -1,0 +1,5 @@
+Total Params: 26.25 M
+Total FLOPs: 199.8 GFLOPSSaved output to ./results_WO-PreRL/WO-PreRL/res-checker!
+Total time: 6.42 s
+Inference time per image: 0.9170 s
+最大 GPU 显存占用：2.25 GB

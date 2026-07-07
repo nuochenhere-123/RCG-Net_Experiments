@@ -1,0 +1,5 @@
+Total Params: 26.25 M
+Total FLOPs: 199.8 GFLOPSSaved output to ./results_WO-PreRL/WO-PreRL/res-NUID!
+Total time: 172.42 s
+Inference time per image: 1.5675 s
+最大 GPU 显存占用：7.16 GB

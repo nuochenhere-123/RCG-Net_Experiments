@@ -1,0 +1,5 @@
+Total Params: 26.25 M
+Total FLOPs: 199.8 GFLOPSSaved output to ./results_WO-PreRL/WO-PreRL/res-U45!
+Total time: 6.44 s
+Inference time per image: 0.1431 s
+最大 GPU 显存占用：1.38 GB

@@ -1,0 +1,5 @@
+Total Params: 26.12 M
+Total FLOPs: 200.08 GFLOPSSaved output to ./results_WO-PreW/WO-PreW/res-C60!
+Total time: 108.09 s
+Inference time per image: 1.8016 s
+最大 GPU 显存占用：7.03 GB

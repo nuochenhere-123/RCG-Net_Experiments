@@ -1,0 +1,5 @@
+Total Params: 26.27 M
+Total FLOPs: 200.38 GFLOPSSaved output to ./results_WO-SCA/WO-SCA-150/res-U45!
+Total time: 4.98 s
+Inference time per image: 0.1107 s
+最大 GPU 显存占用：1.39 GB

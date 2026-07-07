@@ -1,0 +1,5 @@
+Total Params: 26.27 M
+Total FLOPs: 200.38 GFLOPSSaved output to ./results_WO-SCA/WO-SCA-150/res-110!
+Total time: 54.00 s
+Inference time per image: 0.4909 s
+最大 GPU 显存占用：7.20 GB
